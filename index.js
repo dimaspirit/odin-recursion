@@ -14,5 +14,26 @@ function fibs(n) {
   return result;
 }
 
-console.log(fibs(8));
+let fibsRecResult = [];
+
+function fibsRec(n) {
+  if(n < 2) {
+    return n;
+  } else {
+    return fibsRec(n - 1) + fibsRec(n - 2);
+  }
+}
+
+function fibsRecSequent(n) {
+  let result = [];
+
+  for(let i = 0; i < n; i++) {
+    result.push(fibsRec(i))
+  }
+
+  return result;
+}
+
+console.log(`fibonacci sequence with loop ${fibs(8)}`);
+console.log(`fibonacci sequence with recursion ${fibsRecSequent(8)}`);
 
